@@ -34,37 +34,59 @@
       width: 50%;
     }
     .item__img{
-      width: 612px;
+      width: 600px;
     }
     .button{
       color: #EB9C9C;
             background-color: #f35353;
             width: 300px;
-            height: 50px;
+            height: 100px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 25px;
             border-radius: 2px;
             font-family: Arial;
             border-style: none;
-    }
-    
+    } 
+    #total {
+            background-color: #0E6E6E;
+            width: 300px;
+            font-weight: bold;
+            font-size: 16px;
+            font-family: Arial,Calibri;
+            color: #fff;
+            margin-left: 10px;
+            margin-bottom: 50px;
+        }
+    #total span {
+            margin-right: 20px;
+        }
+        .derecha {
+            float: right;
+        }
+        .izqda {
+            float: left;
+        }
+
   </style>
   <body>
     <div  id="app">
       <ul class="grid-container" >    
-        <li class="item" v-for="item in heroes">
-          <button class="eneable: item.state"v-on:click="seleccionarheroe(item)">
+        <li class="item" v-for="item of heroes">
+          <button class="{eneable: item.state}"v-on:click.capture="seleccionarheroe(item)">
         <p>{{item.name}}</p>
         <img class="item__img" v-bind:src="`${item.thumbnail.path}.${item.thumbnail.extension}`" :alt="item.name">
       </button>
         </li>
+        <li>
+          <div id="total">
+            <span class="izquierda">Equipo 1= {{seleccion}}</span>
+            <span class="derecha">Equipo 2= {{seleccion}}</span>           
+          </div>
+        </li>
     </ul>
-
   </div>
-  
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
   <script src="./main.js"></script>
 </body>
-
 </html>
