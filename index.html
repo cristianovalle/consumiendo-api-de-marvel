@@ -9,7 +9,8 @@
     margin: 0;
     padding: 0;
   }
-    .grid-container{
+    .grid-container
+    {
       display: grid;
       grid-template-columns: auto auto;
       grid-gap: 10px;
@@ -31,10 +32,10 @@
       margin: auto;
     }
     item{
-      width: 50%;
+      width: 60%;
     }
     .item__img{
-      width: 600px;
+      width: 750px;
     }
     .button{
       color: #EB9C9C;
@@ -46,7 +47,7 @@
             border-radius: 2px;
             font-family: Arial;
             border-style: none;
-    } 
+            } 
     #total {
             background-color: #0E6E6E;
             width: 300px;
@@ -57,24 +58,31 @@
             margin-left: 10px;
             margin-bottom: 50px;
         }
-    #total span {
-            margin-right: 20px;
+    #total span 
+        {
+          margin-right: 20px;
         }
-        .derecha {
+        .derecha
+        {
             float: right;
         }
         .izqda {
             float: left;
         }
-
   </style>
   <body>
     <div  id="app">
       <ul class="grid-container" >    
-        <li class="item" v-for="item of heroes">
-          <button class="{eneable: item.state}"v-on:click.capture="seleccionarheroe(item)">
-        <p>{{item.name}}</p>
-        <img class="item__img" v-bind:src="`${item.thumbnail.path}.${item.thumbnail.extension}`" :alt="item.name">
+        <li class="item">
+          <button class="{eneable: heroe.state}"v-on:click.capture="seleccionarheroe(heroe)">
+        <p>{{heroes[0].name}}</p>
+        <img class="item__img" v-bind:src="`${heroe.thumbnail.path}.${heroe.thumbnail.extension}`" :alt="heroe.name">
+      </button>
+        </li>
+        <li class="item">
+          <button class="{eneable: heroe2.state}"v-on:click.capture="seleccionarheroe(heroe2)">
+        <p>{{heroes2[0].name}}</p>
+        <img class="item__img" v-bind:src="`${heroe2.thumbnail.path}.${heroe2.thumbnail.extension}`" :alt="heroe2.name">
       </button>
         </li>
         <li>
