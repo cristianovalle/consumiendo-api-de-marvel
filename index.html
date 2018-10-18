@@ -15,7 +15,7 @@
       grid-template-columns: auto auto;
       grid-gap: 10px;
       background-color: #0E6E6E;
-      padding: 10px;
+      padding: 15px;
       justify-content: space-evenly;
     }
     #app {
@@ -32,13 +32,14 @@
       margin: auto;
     }
     item{
-      width: 60%;
+      width: 50%;
     }
     .item__img{
-      width: 750px;
+      width: 500px;
+      height: 500px;
     }
-    .button{
-      color: #EB9C9C;
+    #button{
+      color: black;
             background-color: #f35353;
             width: 300px;
             height: 100px;
@@ -56,7 +57,7 @@
             font-family: Arial,Calibri;
             color: #fff;
             margin-left: 10px;
-            margin-bottom: 50px;
+            margin-bottom: 70px;
         }
     #total span 
         {
@@ -72,23 +73,26 @@
   </style>
   <body>
     <div  id="app">
-      <ul class="grid-container" >    
-        <li class="item">
-          <button class="{eneable: heroe.state}"v-on:click.capture="seleccionarheroe(heroe)">
-        <p>{{heroes[0].name}}</p>
+      <ul class="grid-container">    
+        <li class="item" v-if="heroes.length">
+          <button class="eneable: name.state"v-on:click.capture="seleccionarheroe1(heroe)">
+        <p>{{heroe.name}}</p>
         <img class="item__img" v-bind:src="`${heroe.thumbnail.path}.${heroe.thumbnail.extension}`" :alt="heroe.name">
       </button>
         </li>
-        <li class="item">
-          <button class="{eneable: heroe2.state}"v-on:click.capture="seleccionarheroe(heroe2)">
-        <p>{{heroes2[0].name}}</p>
+        <li class="item" v-if="heroes2.length">
+          <button class="eneable: name.state"v-on:click.capture="seleccionarheroe2(heroe2)">
+        <p>{{heroe2.name}}</p>
         <img class="item__img" v-bind:src="`${heroe2.thumbnail.path}.${heroe2.thumbnail.extension}`" :alt="heroe2.name">
+      </button>
+      <button class="eneable:ramdon">
+       <p>siguiente</p>
       </button>
         </li>
         <li>
           <div id="total">
             <span class="izquierda">Equipo 1= {{seleccion}}</span>
-            <span class="derecha">Equipo 2= {{seleccion}}</span>           
+            <span class="derecha">Equipo 2= {{seleccion2}}</span>           
           </div>
         </li>
     </ul>
