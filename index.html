@@ -5,19 +5,19 @@
     <title></title>
   </head>
 <style>
-  *{
-    margin: 0;
-    padding: 0;
+*{
+  margin: 0;
+  padding: 0;
   }
-    .grid-container
-    {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-gap: 10px;
-      background-color: #0E6E6E;
-      padding: 15px;
-      justify-content: space-evenly;
-    }
+.grid-container
+  {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  background-color: #0E6E6E;
+  padding: 15px;
+  justify-content: space-evenly;
+ }
     #app {
             position: absolute;
             width: auto;
@@ -38,17 +38,16 @@
       width: 500px;
       height: 500px;
     }
-    #button{
-      color: black;
-            background-color: #f35353;
-            width: 300px;
-            height: 100px;
-            font-weight: bold;
-            font-size: 25px;
-            border-radius: 2px;
-            font-family: Arial;
-            border-style: none;
-            } 
+    .button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
     #total {
             background-color: #0E6E6E;
             width: 300px;
@@ -67,7 +66,7 @@
         {
             float: right;
         }
-        .izqda {
+      .izqda {
             float: left;
         }
   </style>
@@ -75,19 +74,17 @@
     <div  id="app">
       <ul class="grid-container">    
         <li class="item" v-if="heroes.length">
-          <button class="eneable: name.state"v-on:click.capture="seleccionarheroe1(heroe)">
+          <button class="eneable: name.state" @click="seleccionarheroe1()">
         <p>{{heroe.name}}</p>
         <img class="item__img" v-bind:src="`${heroe.thumbnail.path}.${heroe.thumbnail.extension}`" :alt="heroe.name">
       </button>
         </li>
         <li class="item" v-if="heroes2.length">
-          <button class="eneable: name.state"v-on:click.capture="seleccionarheroe2(heroe2)">
+          <button class="eneable: name.state" @click="seleccionarheroe2()">
         <p>{{heroe2.name}}</p>
         <img class="item__img" v-bind:src="`${heroe2.thumbnail.path}.${heroe2.thumbnail.extension}`" :alt="heroe2.name">
       </button>
-      <button class="eneable:ramdon">
-       <p>siguiente</p>
-      </button>
+      
         </li>
         <li>
           <div id="total">
