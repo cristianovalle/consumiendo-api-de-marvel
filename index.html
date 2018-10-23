@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="icon" href="6350favi.ico" type="image/gif" sizes="16x16">
+    <title>Marvel</title>
   </head>
 <style>
 *{
@@ -12,7 +13,7 @@
 .grid-container
   {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
   background-color: #0E6E6E;
   padding: 15px;
@@ -69,24 +70,30 @@
       .izqda {
             float: left;
         }
+    #versus{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
   </style>
   <body>
     <div  id="app">
-      <ul class="grid-container">    
-        <li class="item" v-if="heroes.length">
-          <button class="eneable: name.state" @click="seleccionarheroe1()">
-        <p>{{heroe.name}}</p>
-        <img class="item__img" v-bind:src="`${heroe.thumbnail.path}.${heroe.thumbnail.extension}`" :alt="heroe.name">
-      </button>
-        </li>
-        <li class="item" v-if="heroes2.length">
-          <button class="eneable: name.state" @click="seleccionarheroe2()">
-        <p>{{heroe2.name}}</p>
-        <img class="item__img" v-bind:src="`${heroe2.thumbnail.path}.${heroe2.thumbnail.extension}`" :alt="heroe2.name">
-      </button>
-      
-        </li>
-        <li>
+     <ul class="grid-container">    
+      <li class="item" v-if="heroes.length">
+        <button class="eneable: name.state" @click="seleccionarheroe1()">
+         <p>{{heroe.name}}</p>
+         <img class="item__img" v-bind:src="`${heroe.thumbnail.path}.${heroe.thumbnail.extension}`" :alt="heroe.name">
+        </button>
+      </li>
+      <img id="versus "src="logo.png" alt="versus" width=70%> 
+      <li class="item" v-if="heroes2.length">
+       <button class="eneable: name.state" @click="seleccionarheroe2()">
+         <p>{{heroe2.name}}</p>
+         <img class="item__img" v-bind:src="`${heroe2.thumbnail.path}.${heroe2.thumbnail.extension}`" :alt="heroe2.name">
+      </button> 
+       </li>
+         <li>
           <div id="total">
             <span class="izquierda">Equipo 1= {{seleccion}}</span>
             <span class="derecha">Equipo 2= {{seleccion2}}</span>           
